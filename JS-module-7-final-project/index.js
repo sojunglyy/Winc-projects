@@ -142,8 +142,12 @@ do {
     case 4:
       const recipeName = prompt("Enter the name of the recipe: ");
       const foundRecipe = getRecipeByName(cakeRecipes, recipeName);
-      console.log(foundRecipe);
-      savedRecipes.push(foundRecipe);
+      if (foundRecipe) {
+        console.log(foundRecipe);
+        savedRecipes.push(foundRecipe);
+      } else {
+        console.log("No recipe found");
+      }
       break;
     case 5:
       console.log(savedRecipes);
